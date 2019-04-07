@@ -1,0 +1,17 @@
+<h1>Listing attractions</h1>
+
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>Tickets</td>
+        <td>Details</td>
+    </tr>
+    
+<% @attractions.each do |attraction| %>
+
+    <tr>
+    <%= attraction.name %>
+    <%= attraction.tickets %>
+    <%= link_to "Show #{attraction.name}", attraction_path(attraction) %>
+
+    <% end %>
