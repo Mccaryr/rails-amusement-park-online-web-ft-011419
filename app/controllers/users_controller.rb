@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :current_user, only: [:show]
+    before_action :require_login, only: [:show]
     
     def new 
         @user = User.new 
@@ -15,8 +17,11 @@ class UsersController < ApplicationController
     end 
 
     def show 
-
+        @user = User.find_by_id(params[:id])
+        @message = params[:message] if params[:message]
     end 
+
+    private 
 
     def user_params
         params.require(:user).permit(:name, :password, :happiness, :height, :nausea, :tickets, :admin)

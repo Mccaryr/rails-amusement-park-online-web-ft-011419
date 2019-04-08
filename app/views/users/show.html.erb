@@ -1,4 +1,9 @@
-<% "Admin" if @user.admin %>
+<% if @message %>
+    <%= @message %>
+<% end %>
+
+
+<%= "ADMIN" if @user.admin %>
 
 
 <p>Name: <%= @user.name  %></p>
