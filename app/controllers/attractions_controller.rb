@@ -33,6 +33,6 @@ class AttractionsController < ApplicationController
     end 
 
     def find_current_attraction 
-        @attraction = Attraction.find_by(params[:id])
+        @attraction = Attraction.find_by(id: params[:id])
     end 
 end 
